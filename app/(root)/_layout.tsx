@@ -1,14 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { Stack, Redirect } from "expo-router";
 
-const _layout = () => {
+const Layout = () => {
+ 
   return (
-    <View>
-      <Text>eererererererer</Text>
-    </View>
-  )
-}
+    <Stack>
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+    </Stack>
+  );
+};
 
-export default _layout
-
-const styles = StyleSheet.create({})
+export default Layout;

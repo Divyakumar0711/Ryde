@@ -67,7 +67,7 @@ const SignUp = () => {
           ...verification,
           state: "failed",
           error: "Verfication failed",
-        })
+        });
       }
     } catch (err: any) {
       setVerfication({
@@ -137,7 +137,7 @@ const SignUp = () => {
             isVisible={verification.state === "pending"}
             onModalHide={() => {
               if (verification.state === "success") setShowSuccessModal(true);
-            }} 
+            }}
           >
             <View className="bg-white px-7 py-9 rounded-2xl min-h-[300px]">
               <Text className="font-JakartaExtraBold text-2xl mb-2">
@@ -158,7 +158,7 @@ const SignUp = () => {
                 }
               />
               {verification.error && (
-                <Text className="text-red-500 text-sm mt-1" >
+                <Text className="text-red-500 text-sm mt-1">
                   {verification.error}
                 </Text>
               )}
