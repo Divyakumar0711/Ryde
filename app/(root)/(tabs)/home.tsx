@@ -142,8 +142,6 @@ const Home = () => {
 
   const [hasPermission, setHasPermission] = useState(false);
 
- 
-
   useEffect(() => {
     (async () => {
       let { status } = await Location.requestForegroundPermissionsAsync();
@@ -162,8 +160,8 @@ const Home = () => {
       setUserLocation({
         // latitude: location.coords?.latitude,
         // longitude: location.coords?.longitude,
-        latitude:37.78825,
-        longitude:-122.4324,
+        latitude: 37.78825,
+        longitude: -122.4324,
         address: `${address[0].name}, ${address[0].region}`,
       });
     })();
@@ -175,7 +173,7 @@ const Home = () => {
     address: string;
   }) => {
     setDestinationLocation(location);
-
+    router.push("/(root)/find-rides");
   };
 
   return (
