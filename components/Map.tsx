@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, Text, View } from "react-native";
+import {  Text, View } from "react-native";
 import MapView, { Marker, PROVIDER_DEFAULT } from "react-native-maps";
 import MapViewDirections from "react-native-maps-directions";
 import { icons } from "@/constants";
@@ -52,6 +52,8 @@ const directionsAPI = process.env.EXPO_PUBLIC_GOOGLE_API_KEY;
 //       "rating": "4.90"
 //   }
 // ]
+
+
 
 const Map = () => {
   const {

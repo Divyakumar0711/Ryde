@@ -1,6 +1,5 @@
 import 'react-native-get-random-values';
-import { v4 as uuidv4 } from 'uuid';
-import { StyleSheet, Text, View } from 'react-native'
+
 import React from 'react'
 import { Redirect } from 'expo-router'
 

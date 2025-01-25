@@ -13,10 +13,6 @@ import { PaymentProps } from "@/types/type";
 
 
 
-
-// Working on API
-
-
 const Payment = ({
   fullName,
   email,
@@ -36,7 +32,7 @@ const Payment = ({
 
   const { userId } = useAuth();
   const [success, setSuccess] = useState<boolean>(false);
-
+console.log(fullName, email, amount, driverId, rideTime)
   const openPaymentSheet = async () => {
     await initializePaymentSheet();
 
@@ -51,11 +47,11 @@ const Payment = ({
 
   const initializePaymentSheet = async () => {
     const { error } = await initPaymentSheet({
-      merchantDisplayName: "Example, Inc.",
+      merchantDisplayName: "Ryde Inc.",
       intentConfiguration: {
         mode: {
           amount: parseInt(amount) * 100,
-          currencyCode: "usd",
+          currencyCode: "USD",
         },
         confirmHandler: async (
           paymentMethod,
@@ -120,7 +116,7 @@ const Payment = ({
           }
         },
       },
-      returnURL: "myapp://book-ride",
+      returnURL: "app://book-ride",
     });
 
     if (!error) {

@@ -208,7 +208,7 @@ const Home = () => {
           <>
             <View className="flex flex-row items-center justify-between my-5">
               <Text className="text-2xl font-JakartaExtraBold">
-                Welcome {user?.firstName}👋
+                Welcome {user?.fullName}👋
               </Text>
               <TouchableOpacity
                 onPress={handleSignOut}

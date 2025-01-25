@@ -7,7 +7,6 @@ import RideLayout from "@/components/RideLayout";
 import { icons } from "@/constants";
 import { formatTime } from "@/lib/utils";
 import { useDriverStore, useLocationStore } from "@/store";
-import React from "react";
 
 const BookRide = () => {
   const { user } = useUser();
@@ -15,7 +14,7 @@ const BookRide = () => {
   const { drivers, selectedDriver } = useDriverStore();
 
   const driverDetails = drivers?.filter(
-    (driver) => driver.id === selectedDriver
+    (driver) => +driver.id === selectedDriver,
   )[0];
 
   return (
@@ -24,8 +23,8 @@ const BookRide = () => {
       merchantIdentifier="merchant.com.uber"
       urlScheme="myapp"
     >
-      <RideLayout title="Book Ride" snapPoints={["30%", "80%"]}>
-        <>
+      <RideLayout title="Book Ride">
+        
           <Text className="text-xl font-JakartaSemiBold mb-3">
             Ride Information
           </Text>
@@ -65,7 +64,7 @@ const BookRide = () => {
             <View className="flex flex-row items-center justify-between w-full border-b border-white py-3">
               <Text className="text-lg font-JakartaRegular">Pickup Time</Text>
               <Text className="text-lg font-JakartaRegular">
-                {formatTime(parseInt(`${driverDetails?.time!}`))}
+                {formatTime(driverDetails?.time!)}
               </Text>
             </View>
 
@@ -100,7 +99,7 @@ const BookRide = () => {
             driverId={driverDetails?.id}
             rideTime={driverDetails?.time!}
           />
-        </>
+        
       </RideLayout>
     </StripeProvider>
   );
